@@ -651,7 +651,8 @@ GDSIIRecord ReadGDSIIRecord(FILE *f, string **ErrMsg)
      break;
 
      default:
-       *ErrMsg = new string("unknown data type " + DType);
+       *ErrMsg = new string("unknown data type X");
+       *ErrMsg[(*ErrMsg)->length()-1] = DType;
        return GDSIIRecord();
    };
 
